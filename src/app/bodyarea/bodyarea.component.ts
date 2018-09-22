@@ -1,8 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
 import { DataService } from '../data.service';
-import {DataSource} from '@angular/cdk/collections';
-import {BehaviorSubject, Observable} from 'rxjs';
 import { Movie } from '../models/movie.model';
 
 @Component({
@@ -12,27 +10,18 @@ import { Movie } from '../models/movie.model';
 })
 export class BodyareaComponent implements OnInit {
 
-    displayedColumns: string[] = ['movie_title', 'title_year'];
-    dataSource = new MovieDataSource(this.data);
+  displayedColumns: string[] = ['movie_title', 'title_year'];
+  dataSource = new MatTableDataSource<Movie>();
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
- // @ViewChild(MatPaginator) paginator: MatPaginator;
-
-  constructor(private data: DataService) { }
-
-
-  ngOnInit() {
-   // this.dataSource.paginator = this.paginator;
+  constructor(private data: DataService) { 
+    data.getMovieListing().subscribe((response) => {
+      this.dataSource.data = response;
+  });
   }
 
-}
-
-export class MovieDataSource extends DataSource<any> {
-  constructor(private data: DataService) {
-    super();
+  ngOnInit(){
+    this.dataSource.paginator = this.paginator;]
   }
-  connect(): Observable<Movie[]> {
-    return this.data.getMovieListing();
-  }
-  disconnect() {}
 }
