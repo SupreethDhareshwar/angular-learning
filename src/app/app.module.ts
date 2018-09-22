@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; 
+
 import {
   MatToolbarModule,
   MatIconModule,
@@ -37,7 +39,8 @@ export class DemoMaterialModule {}
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    DemoMaterialModule,
+    HttpClientModule,
+    DemoMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
