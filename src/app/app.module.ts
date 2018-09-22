@@ -8,6 +8,7 @@ import {
   MatIconModule,
   MatCardModule,
   MatPaginatorModule,
+  MatSortModule,
   MatTableModule
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +23,7 @@ import { BodyareaComponent } from './bodyarea/bodyarea.component';
     MatIconModule,
     MatCardModule,
     MatPaginatorModule,
+    MatSortModule,
     MatTableModule
   ],
   declarations: []

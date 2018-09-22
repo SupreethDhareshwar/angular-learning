@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatTableDataSource} from '@angular/material';
+import {MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 import { DataService } from '../data.service';
 import { Movie } from '../models/movie.model';
 
@@ -14,6 +14,7 @@ export class BodyareaComponent implements OnInit {
   dataSource = new MatTableDataSource<Movie>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private data: DataService) { 
     data.getMovieListing().subscribe((response) => {
@@ -23,5 +24,6 @@ export class BodyareaComponent implements OnInit {
 
   ngOnInit(){
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 }
