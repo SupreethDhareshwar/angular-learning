@@ -1,3 +1,13 @@
+#Initally install angular cli
+
+npm install -g @angular/cli
+
+ng new angular-app --style=scss --routing
+
+cd angular-app
+
+# Setting up angular material as default theme
+ 
 # Ng6Proj
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
