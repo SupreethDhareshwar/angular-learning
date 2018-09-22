@@ -4,7 +4,9 @@ import {FormsModule} from '@angular/forms';
 import {
   MatToolbarModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatPaginatorModule,
+  MatTableModule
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +18,9 @@ import { BodyareaComponent } from './bodyarea/bodyarea.component';
   exports: [
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   declarations: []
 })
