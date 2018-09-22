@@ -7,7 +7,9 @@ ng new angular-app --style=scss --routing
 cd angular-app
 
 # Setting up angular material as default theme
- 
+  
+  ng add @angular/material
+
 # Ng6Proj
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
