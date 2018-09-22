@@ -22,6 +22,6 @@ export class BodyareaComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.dataSource.paginator = this.paginator;]
+    this.dataSource.paginator = this.paginator;
   }
 }
