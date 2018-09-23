@@ -12,7 +12,11 @@ export class BodyareaComponent implements OnInit {
 
   displayedColumns: string[] = ['movie_title', 'title_year'];
   dataSource = new MatTableDataSource<Movie>();
-
+  
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
