@@ -1,4 +1,4 @@
-#Initally install angular cli
+# Initally install angular cli
 
 npm install -g @angular/cli
 
